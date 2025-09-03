@@ -1,0 +1,6 @@
+@charset "UTF-8";
+@use "base/common" as *;
+@use "page/_mixin.scss" as mx;
+@use "page/header" as header;
+@use "page/main" as main;
+@use "page/footer" as footer;
