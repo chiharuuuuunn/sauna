@@ -6,14 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-  <!-- Google Fontsの読み込み -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&display=swap"
     rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+
 
 </head>
 
@@ -118,7 +122,7 @@
       </nav>
 
       <div class="purchase">
-        <img class="purchase-button" src="img/purchase-button.png" alt="purchase">
+        <a href="#"><img class="purchase-button" src="img/purchase-button.png" alt="purchase"></a>
         <img class="towel" src="img/towel.png" alt="towel">
       </div>
 
@@ -132,15 +136,15 @@
           <li><a href="#">youtube</a></li>
         </ul>
       </nav>
-      <div class="right-image">
-        <div class="right-image-1"><img src="img/side1.png" alt="side"></div>
-        <div class="right-image-2"><img src="img/side2.png" alt="side"></div>
-        <div class="right-image-3"><img src="img/side3.png" alt="side"></div>
-        <div class="right-image-4"><img src="img/side4.png" alt="side"></div>
-        <div class="right-image-5"><img src="img/side5.png" alt="side"></div>
-        <div class="right-image-6"><img src="img/side6.png" alt="side"></div>
-        <div class="right-image-7"><img src="img/side7.png" alt="side"></div>
-        <div class="right-image-8"><img src="img/side8.png" alt="side"></div>
+      <div class="right-images">
+        <div class="right-image right-image-1"><img src="img/side1.png" alt="side"></div>
+        <div class="right-image right-image-2"><img src="img/side2.png" alt="side"></div>
+        <div class="right-image right-image-3"><img src="img/side3.png" alt="side"></div>
+        <div class="right-image right-image-4"><img src="img/side4.png" alt="side"></div>
+        <div class="right-image right-image-5"><img src="img/side5.png" alt="side"></div>
+        <div class="right-image right-image-6"><img src="img/side6.png" alt="side"></div>
+        <div class="right-image right-image-7"><img src="img/side7.png" alt="side"></div>
+        <div class="right-image right-image-8"><img src="img/side8.png" alt="side"></div>
       </div>
 
     </div>
@@ -181,25 +185,27 @@
           <img src="img/worry-section.png" alt="worry">
         </section>
 
-        <div class="about-feature-wrapper">
 
-          <section class="about">
-            <div class="section-title">
-              <img src="img/about-title.png" alt="about">
-            </div>
-            <div class="about-contents">
-              <div class="about-image about-image-1"><img src="img/side1.png" alt="side"></div>
-              <div class="about-image about-image-2"><img src="img/side2.png" alt="side"></div>
-              <div class="about-image about-image-3"><img src="img/side3.png" alt="side"></div>
-              <div class="about-image about-image-4"><img src="img/side5.png" alt="side"></div>
-              <div class="about-image about-image-5"><img src="img/side8.png" alt="side"></div>
-            </div>
-          </section>
+        <section class="about">
+          <div class="section-title">
+            <img src="img/about-title.png" alt="about">
+          </div>
+          <div class="about-contents">
+            <div class="about-image about-image-1"><img src="img/side1.png" alt="side"></div>
+            <div class="about-image about-image-2"><img src="img/side2.png" alt="side"></div>
+            <div class="about-image about-image-3"><img src="img/side3.png" alt="side"></div>
+            <div class="about-image about-image-4"><img src="img/side5.png" alt="side"></div>
+            <div class="about-image about-image-5"><img src="img/side8.png" alt="side"></div>
+          </div>
+          <div class="about-bottom-border">
+            <img src="img/about-feature-border.png" alt="border">
+          </div>
+        </section>
 
-          <section class="feature">
-            <img src="img/feature-section.png" alt="feature">
-          </section>
-        </div>
+        <section class="feature">
+          <img src="img/feature-section.png" alt="feature">
+        </section>
+
 
         <section class="campaign">
           <img src="img/campaign-one-section.png" alt="campaign">
@@ -210,10 +216,13 @@
         </section>
 
         <section class="scene">
-          <div class="section-title">
+          <div class="scene-title">
             <img src="img/scene-section-title.png" alt="scene">
           </div>
-
+          <ul class="scene-slide-items">
+            <li><img src="img/scene-slider1.png" alt="scene"></li>
+            <li><img src="img/scene-slider2.png" alt="scene"></li>
+          </ul>
         </section>
 
         <section class="comparison">
@@ -221,17 +230,137 @@
         </section>
 
         <section class="set">
-          <img src="img/set-contents-one.png" alt="set">
+          <div class="set-title">
+            <h3>セット内容</h3>
+            <p>set contents</p>
+          </div>
+          <div class="set-contents" id="set">
+            <img src="img/set-one-contents.png" alt="set">
+            <div class="set-accordion">
+              <div class="set-accordion-item">
+                <div class="set-accordion-header">
+                  <span>詳細を見る</span>
+                </div>
+                <div class="set-accordion-contents">
+                  <div class="set-accordion-inner">
+                    <span><img src="img/set-detail.png" alt="set-detail"></span>
+                    <a href="#set">× 閉じる</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="set-accordion">
+              <div class="set-accordion--btn active">
+                <a class="set-accordion--btn-bar" href="#set-tab1">詳細を見る</a>
+                <div class="set-accordion--contents" id="set-tab1">
+                  <img src="img/set-detail.png" alt="set">
+                  <a href="#">× 閉じる</a>
+                </div>
+              </div>
+            </div> -->
+          </div>
+          <div class="set-price">
+            <img src="img/set-one-price.png" alt="price">
+          </div>
         </section>
 
         <section class="media">
           <img src="img/media-section.png" alt="media">
         </section>
 
+        <section class="voice">
+          <div class="section-title">
+            <img src="img/voice-title.png" alt="voice">
+          </div>
+          <div class="voice-contents">
+            <ul class="voice-slide-items">
+              <li><img src="img/voice-s.png" alt="voice-contents"></li>
+              <li><img src="img/voice-m.png" alt="voice-contents"></li>
+              <li><img src="img/voice-t.png" alt="voice-contents"></li>
+              <li><img src="img/voice-y.png" alt="voice-contents"></li>
+              <li><img src="img/voice-o.png" alt="voice-contents"></li>
+              <li><img src="img/voice-w.png" alt="voice-contents"></li>
+            </ul>
+
+          </div>
+
+        </section>
+
+        <section class="faq">
+          <div class="section-title">
+            <img src="img/faq-title.png" alt="faq">
+          </div>
+          <!-- <div class="faq-accordion">
+            <button class="faq--btn active">
+              <a class="faq-accordion-btn-bar" href="#faq-tab1">
+
+                <div class="faq-accordion--contents" id="faq-tab1">
+
+                </div>
+          </div> -->
+          <div class="faq-accordion">
+            <div class="faq-accordion-item active">
+              <div class="faq-accordion-header">
+                <span>組み立てってむずかしいですか？</span>
+              </div>
+                <div class="faq-accordion-inner">
+                  <span>いいえ、特別な工具は不要です。説明書どおりに広げるだけで、すぐに使えますよ。</span>
+                </div>
+              </div>
+            </div>
+            <div class="faq-accordion-item active">
+              <div class="faq-accordion-header">
+                <span>電源はどうすればいいですか？</span>
+              </div>
+                <div class="faq-accordion-inner">
+                  <span>普通の家庭用コンセントに挿すだけ。キャンプ場やベランダなど、電源があればどこでも使えます。</span>
+                </div>
+             
+            </div>
+            <div class="faq-accordion-item active">
+              <div class="faq-accordion-header">
+                <span>温まるまでにどのくらいかかりますか？</span>
+              </div>
+            
+                <div class="faq-accordion-inner">
+                  <span>日スイッチを入れて15〜20分ほどでサウナ温度に。お風呂を沸かす感覚に近いです。</span>
+                </div>
+             
+            </div>
+            <div class="faq-accordion-item active">
+              <div class="faq-accordion-header">
+                <span>小さな部屋でも置けますか？</span>
+              </div>
+              
+                <div class="faq-accordion-inner">
+                  <span>畳一枚くらいのスペースがあれば十分。</span>
+                </div>
+              
+            </div>
+            <div class="faq-accordion-item active">
+              <div class="faq-accordion-header">
+                <span>保証やサポートはありますか？</span>
+              </div>
+             
+                <div class="faq-accordion-inner">
+                  <span>ご購入から１年間の保証つき。万が一の不具合も修理・交換で対応します。</span>
+                </div>
+            
+          </div>
+
+        </section>
 
       </main>
 
       <footer>
+        <ul class="footer-nav">
+          <li><a href="#"><img src="img/icon-line.png" alt="line"></a></li>
+          <li><a href="#"><img src="img/icon-insta.png" alt="insta"></a></li>
+          <li><a href="#"><img src="img/icon-youtube.png" alt="youtube"></a></li>
+        </ul>
+        <div class="footer-copy">
+          <p>&copy;おうち DE サウナ</p>
+        </div>
 
       </footer>
 
@@ -244,9 +373,10 @@ heyy what'a up, girls?
  あと少しみんなでがんばろう！
  Thanks chiharu -->
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script src="js/main.js"></script>
 
-
-  <script src="main.js"></script>
 </body>
 
 </html>
