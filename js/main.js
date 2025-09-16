@@ -3,7 +3,7 @@
 ===================================================*/
 
 $(function () {
-    $(".scene-slide-items,.voice-slide-items").slick({
+    $(".scene-slide-items,.movie-slide-items,.voice-slide-items").slick({
         centerPadding: "100px",
         slidesToShow: 1,
         autoplay: true,
@@ -15,16 +15,19 @@ $(function () {
 });
 
 /*=================================================
- set アコーディオン
+ アコーディオン
 ===================================================*/
 $(".set-accordion-header").on("click", function () {
     $(this).next(".set-accordion-contents").slideToggle();
     $(this).parent().toggleClass('active');
 });
 
-$(".set-accordion-inner a").on("click", function () {
-    $(this).closest(".set-accordion-inner").slideUp();
-    $(this).closest(".set-accordion-inner").prev(".set-accordion-header").removeClass("active");
+$(".set-accordion-inner a").on("click", function (e) {
+    e.preventDefault(); // aタグのデフォルト動作を無効化
+    const $accordionItem = $(this).closest(".set-accordion-item");
+
+    $accordionItem.find(".set-accordion-inner").slideUp();
+    $accordionItem.removeClass("active");
 });
 
 $('.faq-accordion-header').click(function () {
@@ -32,5 +35,12 @@ $('.faq-accordion-header').click(function () {
     $(this).toggleClass('active');
 });
 
+/*=================================================
+ ページトップボタン
+===================================================*/
+// ページトップへ戻る
+$(".page-top").on("click", function () {
+    $(".scroll-contents").animate({ scrollTop: 0 }, 500);
+});
 
 
