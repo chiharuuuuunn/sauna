@@ -36,6 +36,62 @@ $('.faq-accordion-header').click(function () {
 });
 
 /*=================================================
+ 購入ボタン（sp)
+===================================================*/
+
+const btn = document.querySelector('.sp-purchase');
+const mv = document.querySelector('.mv');
+const footer = document.querySelector('footer');
+
+// 440px以下のときだけ実行
+const mq = window.matchMedia("(max-width: 440px)");
+
+function initStickyBtn() {
+  // いったんリセット
+  btn.style.display = "none";
+  btn.style.position = "fixed";
+  btn.style.bottom = "0";
+
+  if (!mq.matches) return; // PC時は処理しない
+
+  // MV判定
+  function toggleBtn() {
+    const scrollY = window.scrollY;
+    const mvHeight = mv.offsetHeight;
+
+    if (scrollY > mvHeight) {
+      btn.style.display = 'flex';
+    } else {
+      btn.style.display = 'none';
+    }
+  }
+
+  window.addEventListener('scroll', toggleBtn);
+  window.addEventListener('load', toggleBtn);
+
+  // フッター監視
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        btn.style.position = 'absolute';
+        btn.style.bottom = `${footer.offsetHeight}px`;
+      } else {
+        btn.style.position = 'fixed';
+        btn.style.bottom = '0';
+      }
+    });
+  });
+
+  observer.observe(footer);
+}
+
+// 初期化
+initStickyBtn();
+
+// ウィンドウ幅変更時にも再判定
+mq.addEventListener("change", initStickyBtn);
+
+/*=================================================
  ページトップボタン
 ===================================================*/
 // ページトップへ戻る
