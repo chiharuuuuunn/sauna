@@ -43,8 +43,8 @@ const btn = document.querySelector('.sp-purchase');
 const mv = document.querySelector('.mv');
 const footer = document.querySelector('footer');
 
-// 440px以下のときだけ実行
-const mq = window.matchMedia("(max-width: 440px)");
+// 960px以下のときだけ実行
+const mq = window.matchMedia("(max-width: 960px)");
 
 function initStickyBtn() {
   // いったんリセット
